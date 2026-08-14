@@ -1,4 +1,4 @@
-const CACHE = "arm-court-v41";
+const CACHE = "arm-court-v42";
 const PRECACHE = [
   "/",
   "/index.html",
