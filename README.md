@@ -4,9 +4,9 @@ PWA for booking covered pickleball courts. Deploy on **Vercel** (HTTPS required 
 
 ## Deploy on Vercel
 
-1. Import this repo in [Vercel](https://vercel.com/new) → connect `IKokushibo/ARMPickleBallCourt`.
+1. Import this repo in [Vercel](https://vercel.com/new) → connect `IKokushibo/arm-pickle`.
 2. Framework preset: **Other** (static HTML). Root directory: `.`
-3. Deploy. Note the production URL (e.g. `https://arm-pickleball-court.vercel.app`).
+3. Deploy. Production URL: [arm-pickle.vercel.app](https://arm-pickle.vercel.app).
 
 Optional CLI:
 
