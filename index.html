@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/styles.css?v=41" />
+    <link rel="stylesheet" href="/css/styles.css?v=42" />
     <title>ARM Pickleball Court</title>
   </head>
   <body>
@@ -53,9 +53,23 @@
         <a href="#rates">Rates</a>
         <a href="#heroCalendar">Book</a>
         <a href="#faq">FAQ</a>
+        <button type="button" class="btn btn-outline install-menu-btn" id="installMenuBtn">
+          Install app
+        </button>
         <a class="btn btn-accent" href="#heroCalendar">Book a court</a>
       </nav>
     </header>
+
+    <dialog class="install-dialog" id="installDialog" aria-labelledby="installDialogTitle">
+      <form method="dialog" class="install-dialog-card">
+        <h2 id="installDialogTitle">Install ARM Court</h2>
+        <p id="installDialogBody">
+          On Android Chrome: tap the browser menu (<strong>⋮</strong>), then choose
+          <strong>Install app</strong> or <strong>Add to Home screen</strong>.
+        </p>
+        <button type="submit" class="btn btn-accent" value="ok">Got it</button>
+      </form>
+    </dialog>
 
     <main id="main">
       <section class="hero" id="hero" aria-labelledby="hero-brand">

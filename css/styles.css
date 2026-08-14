@@ -192,6 +192,56 @@ select {
   display: none;
 }
 
+.mobile-nav .install-menu-btn {
+  width: 100%;
+  border-color: rgba(216, 240, 0, 0.55);
+  color: var(--lime);
+  background: rgba(216, 240, 0, 0.08);
+}
+
+.mobile-nav .install-menu-btn[hidden] {
+  display: none;
+}
+
+.install-dialog {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 0;
+  background: #241436;
+  color: var(--white);
+  width: min(22rem, calc(100vw - 2rem));
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+.install-dialog::backdrop {
+  background: rgba(10, 6, 16, 0.72);
+}
+
+.install-dialog-card {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.25rem 1.2rem 1.15rem;
+}
+
+.install-dialog-card h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 0.06em;
+}
+
+.install-dialog-card p {
+  margin: 0;
+  color: var(--white-dim);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.install-dialog-card .btn {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
