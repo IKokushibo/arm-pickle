@@ -106,14 +106,15 @@ select {
 }
 
 .header-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0.65rem 1rem;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0.65rem 1.25rem;
   min-height: var(--header-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .brand-mark {
@@ -121,7 +122,7 @@ select {
   align-items: center;
   gap: 0.65rem;
   min-width: 0;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
 }
 
 .header-actions {
@@ -1252,12 +1253,12 @@ select {
   background: rgba(10, 6, 16, 0.72);
 }
 
-.confirm-body {
+.confirm-dialog .confirm-body {
   margin: 0;
   padding: 1.5rem;
 }
 
-.confirm-body h2 {
+.confirm-dialog .confirm-body h2 {
   margin: 0 0 0.6rem;
   font-family: var(--font-display);
   font-size: 2.2rem;
@@ -1265,7 +1266,7 @@ select {
   font-weight: 400;
 }
 
-.confirm-body menu {
+.confirm-dialog .confirm-body menu {
   margin: 1.25rem 0 0;
   padding: 0;
   display: flex;
@@ -1476,19 +1477,17 @@ select {
 @media (min-width: 720px) {
   .nav {
     display: flex;
+    margin-left: auto;
   }
 
   .nav-toggle,
-  .mobile-nav {
+  .mobile-nav,
+  .header-actions {
     display: none !important;
   }
 
-  .header-actions {
-    margin-left: 0;
-  }
-
   .header-inner .brand-mark {
-    margin-right: auto;
+    margin-right: 0;
   }
 
   .court-list {
