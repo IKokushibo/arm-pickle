@@ -106,9 +106,9 @@ select {
 }
 
 .header-inner {
-  width: 100%;
-  max-width: none;
-  margin: 0;
+  width: min(1180px, 100%);
+  max-width: 1180px;
+  margin: 0 auto;
   padding: 0.65rem 1.25rem;
   min-height: var(--header-h);
   display: flex;
