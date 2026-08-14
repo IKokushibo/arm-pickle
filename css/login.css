@@ -1,0 +1,227 @@
+:root {
+  --purple: #4a2a6b;
+  --purple-deep: #2e1845;
+  --lime: #d8f000;
+  --lime-ink: #1a2200;
+  --card: #f4efe6;
+  --ink: #1c1426;
+  --muted: #6b6475;
+  --line: #ddd4c6;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body.login-body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  color: #fff;
+  background: #1a0f28;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem 1rem 2rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.login-backdrop {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(26, 15, 40, 0.55) 0%, rgba(46, 24, 69, 0.78) 45%, rgba(26, 15, 40, 0.92) 100%),
+    url("/assets/hero-banner.png") center / cover no-repeat;
+  z-index: 0;
+}
+
+.login-shell {
+  position: relative;
+  z-index: 1;
+  width: min(420px, 100%);
+  display: grid;
+  gap: 1.35rem;
+  justify-items: center;
+}
+
+.login-brand {
+  text-align: center;
+}
+
+.login-brand img {
+  width: 88px;
+  height: 88px;
+  border-radius: 18px;
+  object-fit: cover;
+  margin: 0 auto 0.75rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.login-tag {
+  margin: 0;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: rgba(216, 240, 0, 0.9);
+  font-size: 0.95rem;
+}
+
+.login-brand h1 {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 3.6rem);
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.login-sub {
+  margin: 0.35rem 0 0;
+  color: rgba(247, 245, 249, 0.78);
+  font-size: 0.98rem;
+}
+
+.login-card {
+  width: 100%;
+  background: var(--card);
+  color: var(--ink);
+  border-radius: 18px;
+  padding: 1.35rem 1.25rem 1.2rem;
+  display: grid;
+  gap: 0.9rem;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+}
+
+.login-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.login-field > span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.login-field input,
+.login-password input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  background: #fff;
+  color: var(--ink);
+  outline: none;
+}
+
+.login-field input:focus,
+.login-password input:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(74, 42, 107, 0.18);
+}
+
+.login-password {
+  position: relative;
+}
+
+.login-password input {
+  padding-right: 2.75rem;
+}
+
+.login-eye {
+  position: absolute;
+  right: 0.35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+}
+
+.login-eye:hover {
+  color: var(--purple);
+  background: rgba(74, 42, 107, 0.08);
+}
+
+.login-eye svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.login-remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--ink);
+  cursor: pointer;
+  user-select: none;
+}
+
+.login-remember input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--purple);
+}
+
+.login-error {
+  margin: 0;
+  padding: 0.55rem 0.7rem;
+  border-radius: 10px;
+  background: rgba(214, 69, 93, 0.12);
+  color: #b4233a;
+  font-size: 0.9rem;
+}
+
+.login-submit {
+  appearance: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  background: var(--purple);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.login-submit:hover {
+  background: var(--purple-deep);
+  transform: translateY(-1px);
+}
+
+.login-hint {
+  margin: 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.login-hint code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  color: var(--purple);
+}
+
+.login-back {
+  display: block;
+  text-align: center;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.login-back:hover {
+  color: var(--purple);
+  text-decoration: underline;
+}

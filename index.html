@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#4A2A6B" />
+    <meta name="description" content="ARM Pickleball Court: book covered courts. Attack. Reset. Move." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ARM Court" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/assets/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css?v=39" />
+    <title>ARM Pickleball Court</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand-mark" href="#hero" aria-label="ARM Pickleball Court home">
+          <img src="/assets/logo.png" alt="" width="44" height="44" />
+          <span class="brand-text">
+            <span class="brand-name">ARM</span>
+            <span class="brand-sub">Pickleball Court</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#courts">Courts</a>
+          <a href="#rates">Rates</a>
+          <a href="#heroCalendar">Book</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="btn btn-ghost install-btn" id="installBtn" hidden>
+            Install app
+          </button>
+          <a class="btn btn-accent" href="#heroCalendar">Book a court</a>
+          <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" hidden>
+        <a href="#courts">Courts</a>
+        <a href="#rates">Rates</a>
+        <a href="#heroCalendar">Book</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-accent" href="#heroCalendar">Book a court</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="hero" aria-labelledby="hero-brand">
+        <div class="hero-media" aria-hidden="true">
+          <img src="/assets/hero-banner.png" alt="" class="hero-bg" />
+          <div class="hero-veil"></div>
+        </div>
+
+        <div class="hero-stage">
+          <div class="hero-copy">
+            <p class="hero-est">Est. 2025</p>
+            <h1 id="hero-brand" class="hero-title">
+              <span class="hero-title-brand">ARM</span>
+              <span class="hero-title-stack">Pickleball Court</span>
+            </h1>
+            <p class="hero-tag">attack. reset. move.</p>
+          </div>
+
+          <div class="hero-mid">
+            <ul class="hero-side hero-side-left" aria-label="Highlights">
+              <li>
+                <span class="feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14l-2 6 6-2"/><path d="M18 10l2-6-6 2"/><circle cx="9" cy="15" r="1.2" fill="currentColor" stroke="none"/><path d="M8 8l8 8"/></svg>
+                </span>
+                <span class="feature-text">Premium facilities</span>
+              </li>
+              <li>
+                <span class="feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="2.2"/><circle cx="15" cy="8" r="2.2"/><circle cx="12" cy="13" r="2.2"/><path d="M4.5 18c.8-2.2 2.6-3.5 4.5-3.5s3.7 1.3 4.5 3.5"/><path d="M10.5 18c.5-1.4 1.5-2.2 2.5-2.2s2 .8 2.5 2.2"/><path d="M14.5 18c.8-2.2 2.6-3.5 4.5-3.5"/></svg>
+                </span>
+                <span class="feature-text">Community focused</span>
+              </li>
+            </ul>
+
+            <div class="hero-center">
+              <div class="hero-calendar-panel" id="heroCalendar">
+                <p class="hero-cal-label">Select a date</p>
+                <div class="calendar" id="calendar">
+                  <div class="calendar-nav">
+                    <button type="button" class="icon-btn" id="prevMonth" aria-label="Previous month">‹</button>
+                    <h3 id="monthLabel"></h3>
+                    <button type="button" class="icon-btn" id="nextMonth" aria-label="Next month">›</button>
+                  </div>
+                  <div class="calendar-weekdays" aria-hidden="true">
+                    <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                  </div>
+                  <div class="calendar-grid" id="calendarGrid" role="grid" aria-labelledby="monthLabel"></div>
+                </div>
+                <p class="hero-cal-hint" id="selectedDateHint">Tap a day to continue booking</p>
+              </div>
+
+              <div class="hero-below">
+                <p class="hero-lead">Covered courts. Night lights. Book your next match in seconds.</p>
+                <div class="hero-cta">
+                  <a class="btn btn-outline btn-lg" href="#courts">See the courts</a>
+                </div>
+              </div>
+            </div>
+
+            <ul class="hero-side hero-side-right" aria-label="More highlights">
+              <li>
+                <span class="feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/><path d="M9 15l2 2 4-4"/></svg>
+                </span>
+                <span class="feature-text">Easy booking</span>
+              </li>
+              <li>
+                <span class="feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/><path d="M18 15l.9 2.6L21.5 18.5l-2.6.9L18 22l-.9-2.6-2.6-.9 2.6-.9L18 15z"/></svg>
+                </span>
+                <span class="feature-text">Play. Improve. Enjoy.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section courts" id="courts" aria-labelledby="courts-title">
+        <div class="section-head section-head-wide">
+          <p class="eyebrow">Six covered courts</p>
+          <h2 id="courts-title">Pick your play</h2>
+          <p class="section-lead">Silica sand surfaces with LED lighting — six courts for matches, drills, doubles, and group sessions.</p>
+        </div>
+        <div class="court-list" id="courtList"></div>
+      </section>
+
+      <section class="section rates" id="rates" aria-labelledby="rates-title">
+        <div class="section-head">
+          <p class="eyebrow">Simple pricing</p>
+          <h2 id="rates-title">Day &amp; night rates</h2>
+          <p class="section-lead">Open daily. Same rates every day of the week. Times in Philippine Time (PHT). Prices in Philippine Peso (₱).</p>
+        </div>
+        <div class="rate-grid">
+          <article class="rate-block">
+            <h3>Morning</h3>
+            <p class="rate-time">7:00 AM – 4:00 PM PHT</p>
+            <p class="rate-price"><span>₱300</span> / hour</p>
+          </article>
+          <article class="rate-block rate-block-night">
+            <h3>Night</h3>
+            <p class="rate-time">5:00 PM – 6:00 AM PHT</p>
+            <p class="rate-price"><span>₱350</span> / hour</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section book" id="book" aria-labelledby="book-title">
+        <div class="section-head">
+          <p class="eyebrow">Reserve a slot</p>
+          <h2 id="book-title">Book a court</h2>
+          <p class="section-lead">Pick a date on the calendar above. You’ll choose your court and time on the next page.</p>
+        </div>
+        <a class="btn btn-accent btn-lg" href="#heroCalendar">Select a date to book</a>
+      </section>
+
+      <section class="section faq" id="faq" aria-labelledby="faq-title">
+        <div class="section-head">
+          <p class="eyebrow">Good to know</p>
+          <h2 id="faq-title">FAQ</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>How long is a booking slot?</summary>
+            <p>Slots are one hour. You can book consecutive hours if they’re available.</p>
+          </details>
+          <details>
+            <summary>Do you rent paddles and balls?</summary>
+            <p>Yes. Ask the desk on arrival. Gear rental can be added at check-in.</p>
+          </details>
+          <details>
+            <summary>What’s the cancellation policy?</summary>
+            <p>Cancel at least 4 hours before your slot for a full demo credit. Same-day no-shows are charged.</p>
+          </details>
+          <details>
+            <summary>Is this a real booking system?</summary>
+            <p>This build is a client demo with offline PWA support. Live payments and admin can plug in next.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="/assets/logo.png" alt="" width="64" height="64" />
+        <div>
+          <p class="footer-name">ARM Pickleball Court</p>
+          <p class="footer-tag">attack. reset. move.</p>
+        </div>
+      </div>
+      <div class="footer-bar">
+        <p class="footer-meta">© 2026 ARM Pickleball Court. All rights reserved.</p>
+        <a class="footer-admin-btn" href="/login.html">
+          <svg class="footer-admin-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+              fill="currentColor"
+              d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3zm0 2.2 6 2.25V11c0 3.9-2.5 7.4-6 8.8-3.5-1.4-6-4.9-6-8.8V6.45l6-2.25zM11 8v4.2l3.5 2.1.8-1.3-2.8-1.7V8H11z"
+            />
+          </svg>
+          Admin Login
+        </a>
+        <p class="footer-links">
+          <a href="#faq">Privacy Policy</a>
+          <span aria-hidden="true">|</span>
+          <a href="#faq">Terms of Service</a>
+        </p>
+      </div>
+      <p class="footer-note" id="pwaStatus">PWA ready. Add to home screen for the app feel.</p>
+    </footer>
+
+    <script src="/js/data.js" defer></script>
+    <script src="/js/booking.js" defer></script>
+    <script src="/js/app.js" defer></script>
+  </body>
+</html>

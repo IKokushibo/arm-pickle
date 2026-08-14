@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#4A2A6B" />
+    <meta name="description" content="Your ARM Pickleball Court booking confirmation." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ARM Court" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/assets/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css?v=39" />
+    <link rel="stylesheet" href="/css/book.css?v=39" />
+    <title>Booking confirmed · ARM Pickleball Court</title>
+  </head>
+  <body class="book-page confirm-body">
+    <a class="skip-link" href="#confirmMain">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand-mark" href="/#hero" aria-label="ARM Pickleball Court home">
+          <img src="/assets/logo.png" alt="" width="44" height="44" />
+          <span class="brand-text">
+            <span class="brand-name">ARM</span>
+            <span class="brand-sub">Pickleball Court</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/#courts">Courts</a>
+          <a href="/#rates">Rates</a>
+          <a href="/book.html">Book</a>
+          <a href="/#faq">FAQ</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn-accent" href="/#heroCalendar">Book another</a>
+          <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" hidden>
+        <a href="/#courts">Courts</a>
+        <a href="/#rates">Rates</a>
+        <a href="/book.html">Book</a>
+        <a href="/#faq">FAQ</a>
+        <a class="btn btn-accent" href="/#heroCalendar">Book another</a>
+      </nav>
+    </header>
+
+    <main id="confirmMain" class="confirm-page">
+      <div class="confirm-hero">
+        <span class="confirm-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="12" cy="12" r="8.5" />
+            <path d="M8.2 12.3l2.4 2.4 5.2-5.2" />
+          </svg>
+        </span>
+        <p class="eyebrow">Booking confirmation</p>
+        <h1>You’re on the court</h1>
+        <p>Your demo booking is confirmed. Show this reference at the desk when you arrive.</p>
+      </div>
+
+      <div class="confirm-ref-card">
+        <p>Booking reference</p>
+        <strong id="confirmRef">—</strong>
+      </div>
+
+      <div class="confirm-meta" id="confirmMeta"></div>
+
+      <div class="confirm-receipt">
+        <section class="review-block is-tint">
+          <p class="review-kicker">Play date</p>
+          <p class="review-date-value" id="confirmDate"></p>
+          <p class="confirm-muted" id="confirmTimezone">Philippine Time (PHT)</p>
+        </section>
+
+        <section class="review-block">
+          <p class="review-kicker">Courts & times</p>
+          <div id="confirmCourts"></div>
+        </section>
+
+        <section class="review-block">
+          <p class="review-kicker">Guest details</p>
+          <div id="confirmGuest"></div>
+        </section>
+
+        <div class="review-total">
+          <span>Total paid</span>
+          <strong id="confirmTotal"></strong>
+        </div>
+
+        <section class="review-block is-tint">
+          <p class="review-kicker">What to know</p>
+          <ul class="review-notes">
+            <li>This is a simulated demo booking — no real payment was taken.</li>
+            <li>Cancel at least 4 hours before your slot for a full demo credit.</li>
+            <li>Arrive a few minutes early. Paddles and balls can be rented at the desk.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="confirm-actions">
+        <a class="btn btn-ghost" href="/">Back to home</a>
+        <a class="btn btn-accent" href="/#heroCalendar">Book another date</a>
+      </div>
+      <p class="confirm-note">Keep this page or screenshot the reference for check-in.</p>
+    </main>
+
+    <script src="/js/data.js" defer></script>
+    <script src="/js/confirm.js" defer></script>
+    <script src="/js/pwa.js" defer></script>
+  </body>
+</html>

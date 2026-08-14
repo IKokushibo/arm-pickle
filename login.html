@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#2e1845" />
+    <meta name="description" content="Sign in to the ARM Pickleball Court admin dashboard." />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/assets/icons/icon-192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/login.css?v=39" />
+    <title>Admin Login · ARM Pickleball Court</title>
+  </head>
+  <body class="login-body">
+    <div class="login-backdrop" aria-hidden="true"></div>
+
+    <main class="login-shell">
+      <header class="login-brand">
+        <img src="/assets/logo.png" alt="ARM Pickleball Court" width="96" height="96" />
+        <p class="login-tag">attack. reset. move.</p>
+        <h1>ARM</h1>
+        <p class="login-sub">Admin · Manage bookings &amp; courts</p>
+      </header>
+
+      <form class="login-card" id="loginForm" novalidate>
+        <label class="login-field">
+          <span>Email</span>
+          <input
+            type="email"
+            id="loginEmail"
+            name="email"
+            autocomplete="username"
+            placeholder="admin@arm.court"
+            required
+          />
+        </label>
+
+        <label class="login-field">
+          <span>Password</span>
+          <div class="login-password">
+            <input
+              type="password"
+              id="loginPassword"
+              name="password"
+              autocomplete="current-password"
+              placeholder="••••••••"
+              required
+            />
+            <button type="button" class="login-eye" id="togglePassword" aria-label="Show password">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M12 5c-5 0-9.3 3.1-11 7 1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+                />
+              </svg>
+            </button>
+          </div>
+        </label>
+
+        <label class="login-remember">
+          <input type="checkbox" id="rememberMe" name="remember" />
+          <span>Remember me</span>
+        </label>
+
+        <p class="login-error" id="loginError" hidden>Invalid email or password.</p>
+
+        <button type="submit" class="login-submit">Sign In</button>
+        <p class="login-hint">Demo: <code>admin@arm.court</code> / <code>admin</code></p>
+        <a class="login-back" href="/">Back to public site</a>
+      </form>
+    </main>
+
+    <script src="/js/login.js" defer></script>
+    <script src="/js/pwa.js" defer></script>
+  </body>
+</html>

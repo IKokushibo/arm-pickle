@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#4A2A6B" />
+    <meta name="description" content="Book an ARM Pickleball Court — choose court and time." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ARM Court" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/assets/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css?v=39" />
+    <link rel="stylesheet" href="/css/book.css?v=39" />
+    <title>Book a court · ARM Pickleball Court</title>
+  </head>
+  <body class="book-page">
+    <a class="skip-link" href="#bookMain">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand-mark" href="/#hero" aria-label="ARM Pickleball Court home">
+          <img src="/assets/logo.png" alt="" width="44" height="44" />
+          <span class="brand-text">
+            <span class="brand-name">ARM</span>
+            <span class="brand-sub">Pickleball Court</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/#courts">Courts</a>
+          <a href="/#rates">Rates</a>
+          <a href="/book.html">Book</a>
+          <a href="/#faq">FAQ</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn-accent change-date-btn" href="/#heroCalendar">Change date</a>
+          <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" hidden>
+        <a href="/#courts">Courts</a>
+        <a href="/#rates">Rates</a>
+        <a href="/book.html">Book</a>
+        <a href="/#faq">FAQ</a>
+        <a class="btn btn-accent" href="/#heroCalendar">Change date</a>
+      </nav>
+    </header>
+
+    <main id="bookMain" class="book-layout">
+      <section class="book-main">
+        <h1 class="book-page-title">Book your court</h1>
+        <p class="book-intro">Follow the steps below — pick a date, choose a court, select your times, then enter your details.</p>
+
+        <ol class="book-stepper" id="bookStepper" aria-label="Booking steps">
+          <li class="is-done">
+            <span class="stepper-mark" aria-hidden="true">✓</span>
+            <span>Date</span>
+          </li>
+          <li class="is-current" data-step="court">
+            <span class="stepper-mark">2</span>
+            <span>Court</span>
+          </li>
+          <li data-step="times">
+            <span class="stepper-mark">3</span>
+            <span>Times</span>
+          </li>
+          <li data-step="details">
+            <span class="stepper-mark">4</span>
+            <span>Details</span>
+          </li>
+        </ol>
+
+        <div class="book-step-card" id="bookCourtSection">
+          <div class="book-step-head">
+            <p class="eyebrow" id="bookStepLabel">Step 2 · Choose your court</p>
+            <h2 id="bookStepTitle">Tap a court to pick times for it.</h2>
+            <p class="book-lead" id="bookLead">Swipe through all 6 covered courts. Want a second court later? You can add another after.</p>
+          </div>
+
+          <div class="book-hint" id="bookHint">
+            Tap a court card to continue. Times are Philippine Time (PHT). Prices in ₱.
+          </div>
+
+          <div class="book-carousel" id="bookCarousel">
+            <div class="book-court-track" id="bookCourtGrid"></div>
+            <button type="button" class="carousel-nav carousel-prev" id="carouselPrev" aria-label="Previous court">‹</button>
+            <button type="button" class="carousel-nav carousel-next" id="carouselNext" aria-label="Next court">›</button>
+            <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Courts"></div>
+          </div>
+
+          <div class="book-next-card" id="bookNextCard" hidden>
+            <p class="book-hint book-hint-inline" id="bookNextHint">Next: pick play times.</p>
+            <button type="button" class="btn btn-accent book-pick-times" id="pickTimesBtn">Pick times →</button>
+            <a class="book-back-date" href="/#heroCalendar">← Back to date</a>
+          </div>
+        </div>
+
+        <div class="book-slots-panel" id="bookSlotsPanel" hidden>
+          <h2 class="book-slots-title" id="timesTitle">Pick your play times</h2>
+          <p class="book-lead" id="timesLead">Tap one or more hours. You can add more courts after.</p>
+
+          <div class="pricing-guide" aria-label="Pricing guide">
+            <p class="pricing-kicker">Pricing guide</p>
+            <div class="pricing-tiers">
+              <div class="pricing-tier">
+                <span class="tier-icon is-sun" aria-hidden="true">☀</span>
+                <div>
+                  <p>Morning · ₱300/hr</p>
+                  <span>Monday – Sunday · 7 AM – 4 PM</span>
+                </div>
+              </div>
+              <div class="pricing-tier">
+                <span class="tier-icon is-moon" aria-hidden="true">☾</span>
+                <div>
+                  <p>Night · ₱350/hr</p>
+                  <span>Monday – Sunday · 5 PM – 6 AM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="time-slot-list" id="bookSlotGrid" role="listbox" aria-multiselectable="true" aria-label="Time slots"></div>
+
+          <button type="button" class="add-court-btn" id="addCourtBtn">+ Add another court</button>
+
+          <div class="book-continue-bar book-continue-inline" id="bookContinueInline" hidden>
+            <p class="book-continue-copy">
+              <svg class="book-continue-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M9 18h6" />
+                <path d="M10 21h4" />
+                <path d="M12 3a7 7 0 0 0-4 12.7V17h8v-1.3A7 7 0 0 0 12 3z" />
+              </svg>
+              Nice! Add your name and contact next so we can confirm your booking.
+            </p>
+            <button type="button" class="btn btn-accent book-continue-btn" data-continue-details>
+              Continue to your details →
+            </button>
+          </div>
+
+          <div class="times-actions">
+            <button type="button" class="btn btn-ghost" id="slotsBack">← Back to courts</button>
+          </div>
+        </div>
+
+        <form class="book-details" id="bookDetailsForm" hidden novalidate>
+          <h2>Your details</h2>
+          <div class="field-grid">
+            <div class="field">
+              <label for="guestName">Full name</label>
+              <input id="guestName" name="name" type="text" autocomplete="name" required placeholder="Jordan Reyes" />
+            </div>
+            <div class="field">
+              <label for="guestPhone">Mobile number</label>
+              <input id="guestPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required placeholder="09XX XXX XXXX" maxlength="13" pattern="[0-9]*" />
+            </div>
+            <div class="field field-span">
+              <label for="guestEmail">Email <span class="optional">(optional)</span></label>
+              <input id="guestEmail" name="email" type="email" autocomplete="email" placeholder="you@email.com" />
+            </div>
+          </div>
+          <div class="step-actions">
+            <button type="button" class="btn btn-ghost" id="detailsBack">Back to times</button>
+            <button type="submit" class="btn btn-accent">Review booking</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="book-sidebar" aria-label="Booking summary">
+        <div class="book-sidebar-card">
+          <div class="book-sidebar-head">
+            <p class="book-sidebar-kicker">Your booking</p>
+            <p class="book-sidebar-sub">A quick look at what you picked.</p>
+          </div>
+
+          <div class="book-sidebar-row">
+            <div>
+              <p class="book-meta-label">Date</p>
+              <p class="book-meta-value" id="sidebarDate">—</p>
+            </div>
+            <a class="book-change" href="/#heroCalendar">Change</a>
+          </div>
+
+          <div class="book-sidebar-body" id="sidebarBody">
+            <p class="book-empty">No courts chosen yet — start by tapping a court.</p>
+          </div>
+
+          <div class="book-total">
+            <span>Total Amount</span>
+            <strong id="sidebarTotal">₱0</strong>
+          </div>
+
+          <p class="book-secure-note">Secure booking</p>
+        </div>
+        <button type="button" class="btn btn-accent sidebar-continue" id="sidebarContinueBtn" data-continue-details hidden>
+          Continue to your details →
+        </button>
+      </aside>
+    </main>
+
+    <section class="confirm-page" id="bookingConfirm" hidden>
+      <div class="confirm-hero">
+        <span class="confirm-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="12" cy="12" r="8.5" />
+            <path d="M8.2 12.3l2.4 2.4 5.2-5.2" />
+          </svg>
+        </span>
+        <p class="eyebrow">Demo booking confirmed</p>
+        <h1>You’re on the court</h1>
+        <p>Show this reference at the desk when you arrive.</p>
+      </div>
+
+      <div class="confirm-ref-card">
+        <p>Booking reference</p>
+        <strong id="receiptRef">—</strong>
+      </div>
+
+      <div class="confirm-receipt">
+        <section class="review-block is-tint">
+          <p class="review-kicker">Date</p>
+          <p class="review-date-value" id="receiptDate"></p>
+        </section>
+
+        <section class="review-block">
+          <p class="review-kicker">Courts & times</p>
+          <div id="receiptCourts"></div>
+        </section>
+
+        <section class="review-block">
+          <p class="review-kicker">Your details</p>
+          <div id="receiptGuest"></div>
+        </section>
+
+        <div class="review-total">
+          <span>Total paid</span>
+          <strong id="receiptTotal"></strong>
+        </div>
+
+        <section class="review-block is-tint">
+          <p class="review-kicker">What to know</p>
+          <ul class="review-notes">
+            <li>This is a simulated demo booking — no real payment was taken.</li>
+            <li>Cancel at least 4 hours before your slot for a full demo credit.</li>
+            <li>Arrive a few minutes early. Paddles and balls can be rented at the desk.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="confirm-actions">
+        <a class="btn btn-ghost" href="/">Back to home</a>
+        <a class="btn btn-accent" href="/#heroCalendar">Book another date</a>
+      </div>
+      <p class="confirm-note">Keep this page or screenshot the reference for check-in.</p>
+    </section>
+
+    <div class="book-continue-bar book-continue-fixed" id="bookContinueBar" hidden>
+      <p class="book-continue-copy">
+        <svg class="book-continue-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path d="M9 18h6" />
+          <path d="M10 21h4" />
+          <path d="M12 3a7 7 0 0 0-4 12.7V17h8v-1.3A7 7 0 0 0 12 3z" />
+        </svg>
+        Nice! Add your name and contact next so we can confirm your booking.
+      </p>
+      <button type="button" class="btn btn-accent book-continue-btn" data-continue-details>
+        Continue to your details →
+      </button>
+    </div>
+
+    <dialog class="photo-dialog" id="photoDialog">
+      <form method="dialog" class="photo-dialog-body">
+        <img id="photoDialogImg" alt="" />
+        <p id="photoDialogCaption"></p>
+        <button value="close" class="btn btn-accent">Close</button>
+      </form>
+    </dialog>
+
+    <dialog class="review-dialog" id="reviewDialog" aria-labelledby="reviewTitle">
+      <div class="review-card">
+        <header class="review-head">
+          <span class="review-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="8.5" />
+              <path d="M8.2 12.3l2.4 2.4 5.2-5.2" />
+            </svg>
+          </span>
+          <div class="review-head-copy">
+            <p class="eyebrow" id="reviewEyebrow">Check before you confirm</p>
+            <h2 id="reviewTitle">Review your booking</h2>
+            <p id="reviewSub">Nothing is locked in yet — go back if you need to change anything.</p>
+          </div>
+          <button type="button" class="review-close" id="reviewClose" aria-label="Go back">×</button>
+        </header>
+
+        <section class="review-block is-tint">
+          <p class="review-kicker">Date</p>
+          <p class="review-date-value" id="reviewDate"></p>
+        </section>
+
+        <section class="review-block">
+          <p class="review-kicker">Courts & times</p>
+          <div id="reviewCourts"></div>
+        </section>
+
+        <section class="review-block">
+          <p class="review-kicker">Your details</p>
+          <div id="reviewGuest"></div>
+        </section>
+
+        <div class="review-total">
+          <span>Total to pay</span>
+          <strong id="reviewTotal"></strong>
+        </div>
+
+        <section class="review-block is-tint" id="reviewNotes">
+          <p class="review-kicker">Important reminders</p>
+          <ul class="review-notes">
+            <li>Cancel at least 4 hours before your slot for a full demo credit.</li>
+            <li>Same-day no-shows are charged.</li>
+            <li>Arrive a few minutes early. Paddles and balls can be rented at the desk.</li>
+          </ul>
+        </section>
+
+        <p class="review-ref" id="reviewRefWrap" hidden>Reference <strong id="confirmRef"></strong></p>
+
+        <div class="review-actions" id="reviewActions">
+          <button type="button" class="btn btn-ghost" id="reviewBack">Go back</button>
+          <button type="button" class="btn btn-accent" id="reviewPayBtn">Confirm booking</button>
+        </div>
+
+        <div class="review-processing" id="reviewProcessing" hidden>
+          <span class="review-spinner" aria-hidden="true"></span>
+          <p>Processing demo payment…</p>
+          <span>We’re locking your court times. This is a simulated booking.</span>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="/js/data.js" defer></script>
+    <script src="/js/book-page.js" defer></script>
+    <script src="/js/pwa.js" defer></script>
+  </body>
+</html>

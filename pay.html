@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#4A2A6B" />
+    <meta name="description" content="Complete your ARM Pickleball Court payment." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ARM Court" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/assets/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css?v=39" />
+    <link rel="stylesheet" href="/css/book.css?v=39" />
+    <title>Complete your payment · ARM Pickleball Court</title>
+  </head>
+  <body class="book-page pay-body">
+    <a class="skip-link" href="#payMain">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand-mark" href="/#hero" aria-label="ARM Pickleball Court home">
+          <img src="/assets/logo.png" alt="" width="44" height="44" />
+          <span class="brand-text">
+            <span class="brand-name">ARM</span>
+            <span class="brand-sub">Pickleball Court</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/#courts">Courts</a>
+          <a href="/#rates">Rates</a>
+          <a href="/book.html">Book</a>
+          <a href="/#faq">FAQ</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn-accent" href="/#heroCalendar">Book a court</a>
+          <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" hidden>
+        <a href="/#courts">Courts</a>
+        <a href="/#rates">Rates</a>
+        <a href="/book.html">Book</a>
+        <a href="/#faq">FAQ</a>
+        <a class="btn btn-accent" href="/#heroCalendar">Book a court</a>
+      </nav>
+    </header>
+
+    <main id="payMain" class="pay-page">
+      <div class="pay-heading">
+        <div>
+          <p class="eyebrow">Secure checkout</p>
+          <h1>Complete your payment</h1>
+        </div>
+        <p class="pay-ref">Reference <strong id="payRef">—</strong></p>
+      </div>
+
+      <div class="pay-layout">
+        <section class="pay-ticket" aria-label="Reservation">
+          <div class="pay-ticket-brand">
+            <img src="/assets/logo.png" alt="" width="36" height="36" />
+            <div>
+              <p>ARM Pickleball Court</p>
+              <span>attack. reset. move.</span>
+            </div>
+          </div>
+
+          <div class="pay-ticket-body">
+            <p class="pay-label">Reservation</p>
+            <p class="pay-reservation" id="payReservation">Court booking</p>
+            <p class="pay-billed" id="payBilled"></p>
+
+            <div class="pay-due">
+              <span>Amount due</span>
+              <strong id="payAmount">₱0.00</strong>
+            </div>
+
+            <div class="pay-timer" id="payTimerBox">
+              <p class="pay-label">Pay within</p>
+              <p class="pay-clock"><span aria-hidden="true">⏱</span> <strong id="payClock">05:00</strong></p>
+              <p>You have 5 minutes to finish payment. After that this hold is cancelled and the courts are released.</p>
+            </div>
+
+            <p class="pay-label">Schedule</p>
+            <div class="pay-schedule" id="paySchedule"></div>
+
+            <p class="pay-hold-note">
+              Your courts stay reserved while you pay. If payment is not completed within 5 minutes, this booking is cancelled automatically and the courts are released.
+            </p>
+          </div>
+        </section>
+
+        <section class="pay-method" aria-label="Payment method">
+          <h2>Payment method</h2>
+          <p class="pay-demo-note">Demo checkout — no real charge.</p>
+
+          <div class="pay-options" role="tablist">
+            <button type="button" class="pay-option is-active" data-method="qr" aria-pressed="true">
+              Scan QR Ph to pay
+            </button>
+            <button type="button" class="pay-option" data-method="card" aria-pressed="false">
+              Pay with card
+            </button>
+          </div>
+
+          <div class="pay-panel" id="panelQr">
+            <div class="pay-qr" aria-hidden="true">
+              <svg viewBox="0 0 29 29" id="payQrSvg"></svg>
+            </div>
+            <p class="pay-qr-help">Pay securely with QR Ph using GCash, Maya, or any participating bank app. This QR is for demo only.</p>
+            <button type="button" class="btn btn-accent pay-submit" id="qrPayBtn">I’ve paid with QR Ph</button>
+          </div>
+
+          <form class="pay-panel" id="panelCard" hidden novalidate>
+            <div class="field">
+              <label for="cardName">Name on card</label>
+              <input id="cardName" name="cardName" type="text" autocomplete="cc-name" required placeholder="Jordan Reyes" />
+            </div>
+            <div class="field">
+              <label for="cardNumber">Card number</label>
+              <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" autocomplete="cc-number" required placeholder="4242 4242 4242 4242" maxlength="19" />
+            </div>
+            <div class="pay-row">
+              <div class="field">
+                <label for="cardExpiry">Expiry</label>
+                <input id="cardExpiry" name="cardExpiry" type="text" inputmode="numeric" autocomplete="cc-exp" required placeholder="MM / YY" maxlength="7" />
+              </div>
+              <div class="field">
+                <label for="cardCvc">CVC</label>
+                <input id="cardCvc" name="cardCvc" type="text" inputmode="numeric" autocomplete="cc-csc" required placeholder="123" maxlength="4" />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-accent pay-submit" id="cardPayBtn">Pay now</button>
+          </form>
+
+          <p class="pay-hint" id="payError" hidden></p>
+          <p class="pay-legal">By completing this payment you agree to ARM Court’s demo terms. Live payments can plug in next.</p>
+          <button type="button" class="pay-cancel-btn" id="payCancel">✕ Cancel booking</button>
+        </section>
+      </div>
+    </main>
+
+    <script src="/js/data.js" defer></script>
+    <script src="/js/pay.js" defer></script>
+    <script src="/js/pwa.js" defer></script>
+  </body>
+</html>
