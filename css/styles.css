@@ -114,6 +114,8 @@ select {
   display: flex;
   align-items: center;
   gap: 0.7rem;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .brand-mark img {
@@ -160,6 +162,7 @@ select {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  flex-shrink: 0;
 }
 
 .nav-toggle {
@@ -290,8 +293,28 @@ select {
 
 @media (max-width: 719px) {
   .install-btn,
-  .change-date-btn {
+  .change-date-btn,
+  .header-cta {
     display: none !important;
+  }
+
+  .header-actions {
+    gap: 0.45rem;
+  }
+
+  .nav-toggle {
+    flex-shrink: 0;
+  }
+
+  .brand-text {
+    min-width: 0;
+  }
+
+  .brand-sub {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 11rem;
   }
 
   :root {
